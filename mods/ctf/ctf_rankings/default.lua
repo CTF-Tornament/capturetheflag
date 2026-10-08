@@ -12,7 +12,7 @@ local function op_all(operation, callback)
 		minetest.log("warning", "op_all() called without callback, it will block the server step until it finishes")
 	end
 
-	local TARGET_INTERVAL = 0.2
+	local TARGET_INTERVAL = 0.1
 	local interval = 0.05
 	local time = minetest.get_us_time()
 	local times = 0
