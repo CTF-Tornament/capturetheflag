@@ -62,7 +62,7 @@ ctf_modebase.register_mode("classes", {
 		["ctf_ranged:pistol_loaded"        ] = {rarity = 0.2 , max_stacks = 2},
 		["ctf_ranged:shotgun_loaded"       ] = {rarity = 0.05                },
 		["ctf_ranged:smg_loaded"           ] = {rarity = 0.05                },
-		-- ["ctf_ranged:sniper_magnum_loaded" ] = {rarity = 0.05                },
+		["ctf_ranged:sniper_magnum_loaded" ] = {rarity = 0.05                },
 
 		["ctf_map:unwalkable_dirt"  ] = {min_count = 5, max_count = 26, max_stacks = 1, rarity = 0.1},
 		["ctf_map:unwalkable_stone" ] = {min_count = 5, max_count = 26, max_stacks = 1, rarity = 0.1},
@@ -75,6 +75,7 @@ ctf_modebase.register_mode("classes", {
 
 		["ctf_ranged:ammo"    ] = {min_count = 3, max_count = 10, rarity = 0.3  , max_stacks = 2},
 		["ctf_healing:medkit" ] = {                               rarity = 0.08 , max_stacks = 2},
+		["wind_charges:wind_charge" ] = {min_count = 3, max_count = 20, rarity = 0.3  , max_stacks = 1},
 
 		["ctf_grenades:frag" ] = {rarity = 0.1, max_stacks = 1},
 		["ctf_grenades:smoke"] = {rarity = 0.2, max_stacks = 2},
@@ -87,7 +88,7 @@ ctf_modebase.register_mode("classes", {
 	},
 	physics = {sneak_glitch = true, new_move = true},
 	blacklisted_nodes = {"default:apple"},
-	team_chest_items = {
+	team__items = {
 		"default:cobble 80", "default:wood 80", "ctf_map:damage_cobble 20", "ctf_map:reinforced_cobble 20",
 		"default:torch 30", "ctf_teams:door_steel 2",
 	},
