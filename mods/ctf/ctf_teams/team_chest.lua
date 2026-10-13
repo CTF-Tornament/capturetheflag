@@ -102,8 +102,8 @@ for _, team in ipairs(ctf_teams.teamlist) do
 			meta:set_string("infotext", S("@1 Team's Chest", HumanReadable(team)))
 
 			local inv = meta:get_inventory()
-			inv:set_size("main", 6 * 7)
-			inv:set_size("pro", 4 * 7)
+			inv:set_size("main", 10 * 7)
+			--inv:set_size("pro", 4 * 7)
 			inv:set_size("helper", 1 * 1)
 		end
 
@@ -131,44 +131,30 @@ for _, team in ipairs(ctf_teams.teamlist) do
 				"list[current_player;main;1,9.08;8,3;8]",
 			}, "")
 
-			local reg_access, pro_access
-			if not flag_captured and ctf_rankings.backend ~= "dummy" then
-				reg_access, pro_access = get_chest_access(name)
-			else
-				reg_access, pro_access = true, true
-			end
+			-- local reg_access
 
-			if reg_access ~= true then
-				formspec = formspec .. "label[0.75,3;" ..
-					minetest.formspec_escape(minetest.wrap_text(
-						reg_access or S("You aren't allowed to access the team chest"),
-						60
-					)) ..
-				"]"
+			-- if not flag_captured then
+			-- 	reg_access = get_chest_access(name)
+			-- else
+			-- 	reg_access = true
+			-- end
 
-				minetest.show_formspec(name, "ctf_teams:no_access", formspec)
-				return
-			end
+			-- if reg_access ~= true then
+			-- 	formspec = formspec .. "label[0.75,3;" ..
+			-- 		minetest.formspec_escape(minetest.wrap_text(
+			-- 			reg_access or S("You aren't allowed to access the team chest"),
+			-- 			60
+			-- 		)) ..
+			-- 	"]"
+
+			-- 	minetest.show_formspec(name, "ctf_teams:no_access", formspec)
+			-- 	return
+			-- end
 
 			local chestinv = "nodemeta:" .. pos.x .. "," .. pos.y .. "," .. pos.z
 
-			formspec = formspec .. "list[" .. chestinv .. ";main;0,0.3;6,7;]" ..
-				"background[6,-0.2;4.15,7.7;ctf_map_pro_section.png;false]"
-
-			if pro_access == true then
-				formspec = formspec .. "list[" .. chestinv .. ";pro;6,0.3;4,7;]" ..
-					"listring[" .. chestinv ..";pro]" ..
-					"listring[" .. chestinv .. ";helper]" ..
-					"label[7,-0.2;" ..
-					minetest.formspec_escape(S("Pro players only")) .. "]"
-			else
-				formspec = formspec .. "label[6.5,2;" ..
-					minetest.formspec_escape(minetest.wrap_text(
-						pro_access or S("You aren't allowed to access the pro section"),
-						20
-					)) ..
-				"]"
-			end
+			 formspec = formspec .. "list[" .. chestinv .. ";main;0,0.3;10,7;]" 
+			 	--"background[6,-0.2;4.15,7.7;ctf_map_pro_section.png;false]"
 
 			formspec = formspec ..
 				"listring[" .. chestinv ..";main]" ..
@@ -190,13 +176,11 @@ for _, team in ipairs(ctf_teams.teamlist) do
 				return 0
 			end
 
-			local reg_access, pro_access = get_chest_access(name)
+			local reg_access = get_chest_access(name)
 
-			if ctf_rankings.backend == "dummy" then
-				reg_access, pro_access = true, true
-			end
+			reg_access = true
 
-			if reg_access == true and (pro_access == true or from_list ~= "pro" and to_list ~= "pro") then
+			if reg_access == true then
 				if to_list == "helper" then
 					-- handle move & overflow
 					local chestinv = minetest.get_inventory({type = "node", pos = pos})
@@ -234,20 +218,20 @@ for _, team in ipairs(ctf_teams.teamlist) do
 				return 0
 			end
 
-			local reg_access, pro_access = get_chest_access(name)
+			local reg_access = get_chest_access(name)
 
-			if ctf_rankings.backend == "dummy" then
-				reg_access, pro_access = true, true
-			end
 
-			if reg_access == true and (pro_access == true or listname ~= "pro") then
+			reg_access = true
+
+
+			if reg_access == true then
 				local chestinv = minetest.get_inventory({type = "node", pos = pos})
-				if chestinv:room_for_item("pro", stack) then
+				if chestinv:room_for_item("main", stack) then
 					return stack:get_count()
 				else
 					-- handle overflow
 					local playerinv = player:get_inventory()
-					local leftovers = chestinv:add_item("pro", stack)
+					local leftovers = chestinv:add_item("main", stack)
 					local leftover = chestinv:add_item("main", leftovers)
 					local n_stack = stack
 					n_stack:set_count(stack:get_count() - leftover:get_count())
@@ -279,13 +263,11 @@ for _, team in ipairs(ctf_teams.teamlist) do
 				return 0
 			end
 
-			local reg_access, pro_access = get_chest_access(name)
+			local reg_access = get_chest_access(name)
 
-			if ctf_rankings.backend == "dummy" then
-				reg_access, pro_access = true, true
-			end
+			reg_access = true
 
-			if reg_access == true and (pro_access == true or listname ~= "pro") then
+			if reg_access == true then
 				return stack:get_count()
 			else
 				return 0
