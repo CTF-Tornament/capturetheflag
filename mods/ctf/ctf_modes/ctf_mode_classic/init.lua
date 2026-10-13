@@ -37,6 +37,7 @@ ctf_modebase.register_mode("classic", {
 
 		["ctf_ranged:ammo" ] = {min_count = 3, max_count = 10, rarity = 0.3 , max_stacks = 2},
 		["default:apple"   ] = {min_count = 6, max_count = 16, rarity = 0.2 , max_stacks = 2},
+		["wind_charges:wind_charge" ] = {min_count = 3, max_count = 20, rarity = 0.3  , max_stacks = 1},
 
 		["ctf_grenades:frag" ] = {rarity = 0.1, max_stacks = 1},
 		["ctf_grenades:smoke"] = {rarity = 0.2, max_stacks = 2},
