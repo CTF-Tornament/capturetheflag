@@ -2,7 +2,7 @@ local RANKLIST = {
 	_sort = "score",
 	"score",
 	"flag_captures", "flag_attempts",
-	"kills", "kill_assists", "bounty_kills",
+	"kills", "kill_assists", --"bounty_kills",
 	"deaths",
 	"hp_healed",
 	"reward_given_to_enemy"
@@ -20,8 +20,8 @@ local hunter, classes = ctf_core.include_files(
 
 classes.register_on_class_change(hunter.on_class_change)
 
-local old_bounty_reward_func = ctf_modebase.bounties.bounty_reward_func
-local old_get_next_bounty = ctf_modebase.bounties.get_next_bounty
+--local old_bounty_reward_func = ctf_modebase.bounties.bounty_reward_func
+--local old_get_next_bounty = ctf_modebase.bounties.get_next_bounty
 local old_get_skin = ctf_cosmetics.get_skin
 local custom_item_levels = table.copy(features.initial_stuff_item_levels)
 
@@ -112,8 +112,8 @@ ctf_modebase.register_mode("classes", {
 	initial_stuff_item_levels = custom_item_levels,
 	is_restricted_item = classes.is_restricted_item,
 	on_mode_start = function()
-		ctf_modebase.bounties.bounty_reward_func = ctf_modebase.bounty_algo.kd.bounty_reward_func
-		ctf_modebase.bounties.get_next_bounty = ctf_modebase.bounty_algo.kd.get_next_bounty
+		--ctf_modebase.bounties.bounty_reward_func = ctf_modebase.bounty_algo.kd.bounty_reward_func
+		--ctf_modebase.bounties.get_next_bounty = ctf_modebase.bounty_algo.kd.get_next_bounty
 
 		ctf_cosmetics.get_skin = function(player)
 			if not ctf_teams.get(player) then
@@ -124,8 +124,8 @@ ctf_modebase.register_mode("classes", {
 		end
 	end,
 	on_mode_end = function()
-		ctf_modebase.bounties.bounty_reward_func = old_bounty_reward_func
-		ctf_modebase.bounties.get_next_bounty = old_get_next_bounty
+		--ctf_modebase.bounties.bounty_reward_func = old_bounty_reward_func
+		--ctf_modebase.bounties.get_next_bounty = old_get_next_bounty
 		ctf_cosmetics.get_skin = old_get_skin
 
 		classes.finish()

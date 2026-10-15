@@ -2,7 +2,7 @@ local RANKLIST = {
 	_sort = "score",
 	"score",
 	"flag_captures", "flag_attempts",
-	"kills", "kill_assists", "bounty_kills",
+	"kills", "kill_assists", --"bounty_kills",
 	"deaths",
 	"hp_healed",
 	"reward_given_to_enemy"
@@ -12,8 +12,8 @@ local rankings = ctf_rankings:init(RANKLIST)
 local recent_rankings = ctf_modebase.recent_rankings(rankings)
 local features = ctf_modebase.features(rankings, recent_rankings)
 
-local old_bounty_reward_func = ctf_modebase.bounties.bounty_reward_func
-local old_get_next_bounty = ctf_modebase.bounties.get_next_bounty
+--local old_bounty_reward_func = ctf_modebase.bounties.bounty_reward_func
+--local old_get_next_bounty = ctf_modebase.bounties.get_next_bounty
 ctf_modebase.register_mode("classic", {
 	treasures = {
 		["default:ladder_wood" ] = {                max_count = 20, rarity = 0.3, max_stacks = 5},
@@ -54,12 +54,12 @@ ctf_modebase.register_mode("classic", {
 	end,
 	initial_stuff_item_levels = features.initial_stuff_item_levels,
 	on_mode_start = function()
-		ctf_modebase.bounties.bounty_reward_func = ctf_modebase.bounty_algo.kd.bounty_reward_func
-		ctf_modebase.bounties.get_next_bounty = ctf_modebase.bounty_algo.kd.get_next_bounty
+		--ctf_modebase.bounties.bounty_reward_func = ctf_modebase.bounty_algo.kd.bounty_reward_func
+		--ctf_modebase.bounties.get_next_bounty = ctf_modebase.bounty_algo.kd.get_next_bounty
 	end,
 	on_mode_end = function()
-		ctf_modebase.bounties.bounty_reward_func = old_bounty_reward_func
-		ctf_modebase.bounties.get_next_bounty = old_get_next_bounty
+		--ctf_modebase.bounties.bounty_reward_func = old_bounty_reward_func
+		--ctf_modebase.bounties.get_next_bounty = old_get_next_bounty
 	end,
 	on_new_match = features.on_new_match,
 	on_match_end = features.on_match_end,

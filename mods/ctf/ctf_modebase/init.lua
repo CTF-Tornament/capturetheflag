@@ -77,13 +77,13 @@ ctf_core.include_files(
 	"hpregen.lua",
 	"respawn_delay.lua",
 	"markers.lua",
-	"bounties.lua",
+	--"bounties.lua",
 	"build_timer.lua",
 	"update_wear.lua",
 	"mode_vote.lua",
 	"skip_vote.lua",
 	"recent_rankings.lua",
-	"bounty_algo.lua",
+	--"bounty_algo.lua",
 	"features.lua"
 )
 
