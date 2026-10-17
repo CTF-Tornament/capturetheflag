@@ -442,13 +442,13 @@ local function end_combat_mode(player, reason, killer, weapon_image)
 			local total_enemy_reward = 0
 
 			local rewards = {kills = 1, score = killscore}
-			local bounty = ctf_modebase.bounties.claim(player, killer)
+			--local bounty = ctf_modebase.bounties.claim(player, killer)
 
-			if bounty then
-				for name, amount in pairs(bounty) do
-					rewards[name] = (rewards[name] or 0) + amount
-				end
-			end
+			-- if bounty then
+			-- 	for name, amount in pairs(bounty) do
+			-- 		rewards[name] = (rewards[name] or 0) + amount
+			-- 	end
+			-- end
 
 			recent_rankings.add(killer, rewards)
 			total_enemy_reward = total_enemy_reward + rewards.score
