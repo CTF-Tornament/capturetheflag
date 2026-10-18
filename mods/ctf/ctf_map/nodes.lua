@@ -303,6 +303,10 @@ local chest_def = {
 			minetest.pos_to_string(pos)
 		))
 	end,
+	on_rightclick = function(pos, player)
+		minetest.swap_node(pos, {name = "ctf_map:chest_opened"})
+		minetest.get_meta(pos):set_string("infotext", chestv)
+	end,
 	on_metadata_inventory_take = function(pos, listname, index, stack, player)
 		minetest.log("action", string.format("%s takes %s from treasure chest at %s",
 			player:get_player_name(),
@@ -317,8 +321,8 @@ local chest_def = {
 				minetest.set_node(pos, {name = "air"})
 			end)
 		end
-		minetest.swap_node(pos, {name = "ctf_map:chest_opened"})
-		minetest.get_meta(pos):set_string("infotext", chestv)
+		-- minetest.swap_node(pos, {name = "ctf_map:chest_opened"})
+		-- minetest.get_meta(pos):set_string("infotext", chestv)
 	end,
 }
 

@@ -132,6 +132,12 @@ local function process_ray(ray, user, look_dir, def)
 			local name = user:get_player_name()
 			local distance = user:get_pos():distance(hitpoint.ref:get_pos())
 
+			minetest.sound_play("ctf_ranged_hit", {
+				to_player = name,
+				gain = 0.5,
+				pitch = 0.8
+			})
+
 			hitpoint.ref:punch(user, def.fire_interval or 0.1, {
 				full_punch_interval = def.fire_interval or 0.1,
 				damage_groups = {
@@ -144,10 +150,6 @@ local function process_ray(ray, user, look_dir, def)
 			if not hit_sent[name] then
 				hit_sent[name] = true
 				minetest.after(0.2, function() hit_sent[name] = nil end)
-				minetest.sound_play("ctf_ranged_hit", {
-					to_player = name,
-					gain = 0.6
-				})
 			end
 		end
 	end
