@@ -17,6 +17,7 @@ function ctf_healing.register_bandage(name, def)
 
 				local pname = object:get_player_name()
 				local uname = player:get_player_name()
+				local pos = object:get_pos()
 
 				if pname == uname then return end
 
@@ -60,7 +61,7 @@ function ctf_healing.register_bandage(name, def)
 				end
 
 				local result = RunCallbacks(ctf_healing.registered_on_heal, player, object, hp_add)
-
+				
 				if not result then
 					object:set_hp(hp)
 					hud_events.new(pname, {
@@ -72,6 +73,19 @@ function ctf_healing.register_bandage(name, def)
 						quick = true,
 						text = S("You healed") .. " " .. pname .. "!",
 						color = 0xC1FF44,
+					})
+					minetest.add_particlespawner({
+						amount = 5,
+						time = 0.1,
+						minpos = {x = pos.x - 1.3, y = pos.y, z = pos.z - 1.3},
+						maxpos = {x = pos.x + 1.3, y = pos.y + 2.5, z = pos.z + 1.3},
+						minvel = {x = -1.4, y = 0, z = -1.4},
+						maxvel = {x = 1.4, y = 1.4, z = 1.4},
+						minexptime = 0.5,
+						maxexptime = 1,
+						size = 0.7,
+						texture = "ctf_healing_particle.png",
+						glow = 8
 					})
 				elseif type(result) == "string" then
 					hud_events.new(uname, {
