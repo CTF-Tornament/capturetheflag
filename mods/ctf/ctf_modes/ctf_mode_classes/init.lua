@@ -70,8 +70,9 @@ ctf_modebase.register_mode("classes", {
 		["ctf_map:spike"            ] = {min_count = 1, max_count =  5, max_stacks = 2, rarity = 0.2},
 		["ctf_map:damage_cobble"    ] = {min_count = 5, max_count = 20, max_stacks = 2, rarity = 0.2},
 		["ctf_map:reinforced_cobble"] = {min_count = 5, max_count = 25, max_stacks = 2, rarity = 0.2},
-		["ctf_map:reinforced_glass"] = {min_count = 5, max_count = 10, max_stacks = 2, rarity = 0.2},
-		["ctf_landmine:landmine"         ] = {min_count = 1, max_count =  5, max_stacks = 1, rarity = 0.2},
+		["ctf_map:reinforced_glass" ] = {min_count = 5, max_count = 10, max_stacks = 2, rarity = 0.2},
+		["ctf_landmine:landmine"    ] = {min_count = 1, max_count =  5, max_stacks = 1, rarity = 0.2},
+		["ctf_map:wheat_block"      ] = {rarity = 0.1, min_count = 1, max_count = 3, max_stacks = 1},
 
 		["ctf_ranged:ammo"    ] = {min_count = 3, max_count = 10, rarity = 0.3  , max_stacks = 2},
 		["ctf_healing:medkit" ] = {                               rarity = 0.08 , max_stacks = 2},

@@ -21,6 +21,7 @@ ctf_modebase.register_mode("classic", {
 
 		["default:cobble"      ] = {min_count = 20, max_count = 99, rarity = 0.3, max_stacks = 2},
 		["default:wood"        ] = {min_count = 20, max_count = 99, rarity = 0.2, max_stacks = 2},
+		["ctf_map:wheat_block" ] = {rarity = 0.1, min_count = 1, max_count = 3, max_stacks = 1},
 
 		["ctf_teams:door_steel"] = {rarity = 0.2, max_stacks = 3},
 
