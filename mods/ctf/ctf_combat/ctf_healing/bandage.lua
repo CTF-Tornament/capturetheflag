@@ -75,7 +75,7 @@ function ctf_healing.register_bandage(name, def)
 						color = 0xC1FF44,
 					})
 					minetest.add_particlespawner({
-						amount = 7,
+						amount = 20,
 						time = 0.1,
 						minpos = {x = pos.x - 1.3, y = pos.y, z = pos.z - 1.3},
 						maxpos = {x = pos.x + 1.3, y = pos.y + 2.2, z = pos.z + 1.3},
@@ -83,9 +83,9 @@ function ctf_healing.register_bandage(name, def)
 						maxvel = {x = 1.2, y = 1.2, z = 1.2},
 						minexptime = 0.5,
 						maxexptime = 1,
-						size = 0.7,
+						size = 10,
 						texture = "ctf_healing_particle.png",
-						glow = 8
+						glow = 10
 					})
 				elseif type(result) == "string" then
 					hud_events.new(uname, {
