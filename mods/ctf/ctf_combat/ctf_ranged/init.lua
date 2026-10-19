@@ -146,11 +146,6 @@ local function process_ray(ray, user, look_dir, def)
 					fleshy = def.damage - math.max(0, math.round((def.min_range or 0) - distance) * 10)
 				}
 			}, look_dir)
-
-			if not hit_sent[name] then
-				hit_sent[name] = true
-				minetest.after(0.2, function() hit_sent[name] = nil end)
-			end
 		end
 	end
 end

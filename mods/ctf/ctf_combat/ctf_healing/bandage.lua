@@ -78,13 +78,13 @@ function ctf_healing.register_bandage(name, def)
 						amount = 5,
 						time = 0.1,
 						minpos = {x = pos.x - 1.3, y = pos.y, z = pos.z - 1.3},
-						maxpos = {x = pos.x + 1.3, y = pos.y + 2.5, z = pos.z + 1.3},
-						minvel = {x = -1.4, y = 0, z = -1.4},
-						maxvel = {x = 1.4, y = 1.4, z = 1.4},
+						maxpos = {x = pos.x + 1.3, y = pos.y + 2.2, z = pos.z + 1.3},
+						minvel = {x = -1.2, y = 0, z = -1.3},
+						maxvel = {x = 1.2, y = 1.2, z = 1.2},
 						minexptime = 0.5,
 						maxexptime = 1,
 						size = 0.7,
-						texture = "ctf_healing_bandage.png",
+						texture = "ctf_healing_particle.png",
 						glow = 8
 					})
 				elseif type(result) == "string" then
