@@ -62,7 +62,7 @@ ctf_modebase.register_mode("classes", {
 		["ctf_ranged:pistol_loaded"        ] = {rarity = 0.2 , max_stacks = 2},
 		["ctf_ranged:shotgun_loaded"       ] = {rarity = 0.05                },
 		["ctf_ranged:smg_loaded"           ] = {rarity = 0.05                },
-		["ctf_ranged:sniper_magnum_loaded" ] = {rarity = 0.05                },
+		["ctf_ranged:sniper_magnum_loaded" ] = {rarity = 0.1                },
 
 		["ctf_map:unwalkable_dirt"  ] = {min_count = 5, max_count = 26, max_stacks = 1, rarity = 0.1},
 		["ctf_map:unwalkable_stone" ] = {min_count = 5, max_count = 26, max_stacks = 1, rarity = 0.1},
@@ -72,7 +72,7 @@ ctf_modebase.register_mode("classes", {
 		["ctf_map:reinforced_cobble"] = {min_count = 5, max_count = 25, max_stacks = 2, rarity = 0.2},
 		["ctf_map:reinforced_glass" ] = {min_count = 5, max_count = 10, max_stacks = 2, rarity = 0.2},
 		["ctf_landmine:landmine"    ] = {min_count = 1, max_count =  5, max_stacks = 1, rarity = 0.2},
-		["ctf_map:wheat_block"      ] = {rarity = 0.1, min_count = 1, max_count = 3, max_stacks = 1},
+		["ctf_map:wheat_block"      ] = {rarity = 0.2, min_count = 1, max_count = 3, max_stacks = 1},
 
 		["ctf_ranged:ammo"    ] = {min_count = 3, max_count = 10, rarity = 0.3  , max_stacks = 2},
 		["ctf_healing:medkit" ] = {                               rarity = 0.08 , max_stacks = 2},

@@ -84,7 +84,7 @@ function ctf_healing.register_bandage(name, def)
 						minexptime = 0.5,
 						maxexptime = 1,
 						size = 0.7,
-						texture = "ctf_healing_particle.png",
+						texture = "ctf_healing_bandage.png",
 						glow = 8
 					})
 				elseif type(result) == "string" then
