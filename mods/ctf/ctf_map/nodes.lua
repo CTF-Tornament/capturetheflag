@@ -144,7 +144,7 @@ minetest.register_node("ctf_map:wheat_block", {
     diggable = true,
 	pointable = true,
 	is_ground_content = false,
-	groups = {crumbly = 3, soil = 1, grass = 1, snappy = 2, fall_damage_add_percent = -35, bouncy = 20},
+	groups = {crumbly = 3, soil = 1, grass = 1, snappy = 2, fall_damage_add_percent = -35, --[[bouncy = 20]]},
 	sounds = default.node_sound_dirt_defaults(),
 })
 
