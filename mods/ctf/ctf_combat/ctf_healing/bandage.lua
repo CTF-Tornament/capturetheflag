@@ -75,7 +75,7 @@ function ctf_healing.register_bandage(name, def)
 						color = 0xC1FF44,
 					})
 					minetest.add_particlespawner({
-						amount = 5,
+						amount = 7,
 						time = 0.1,
 						minpos = {x = pos.x - 1.3, y = pos.y, z = pos.z - 1.3},
 						maxpos = {x = pos.x + 1.3, y = pos.y + 2.2, z = pos.z + 1.3},
