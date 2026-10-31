@@ -239,7 +239,7 @@ local function prepare_nodes(pos1, pos2, data, team_chest_items, blacklisted_nod
 
 			local inv = minetest.get_meta(pos):get_inventory()
 			inv:set_list("main", team_chest_items)
-			inv:set_list("pro", {})
+			-- inv:set_list("pro", {})
 			inv:set_list("helper", {})
 		end
 	end

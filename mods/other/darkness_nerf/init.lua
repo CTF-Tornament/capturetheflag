@@ -1,5 +1,5 @@
 minetest.register_on_joinplayer(function(player)
-	player:set_properties({glow = 3})
+	player:set_properties({glow = 4})
 end)
 
 local MIN_GLOW = 8
@@ -22,3 +22,7 @@ minetest.register_on_mods_loaded(function()
 
 	minetest.register_entity(":__builtin:item", itemdef)
 end)
+
+minetest.override_item("air", {
+    light_source = 5,
+})

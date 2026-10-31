@@ -19,7 +19,7 @@ local class_props = {
 			"ctf_mode_classes:knight_sword",
 		},
 		disallowed_items = {
-			"ctf_ranged:sniper",
+			"ctf_ranged:sniper_magnum",
 			"ctf_ranged:rifle",
 			"ctf_ranged:smg",
 		},
@@ -35,7 +35,7 @@ local class_props = {
 			"default:cobble 99",
 		},
 		disallowed_items = {
-			"ctf_ranged:sniper",
+			"ctf_ranged:sniper_magnum",
 			"ctf_ranged:rifle",
 			"ctf_ranged:smg",
 			"ctf_ranged:shotgun",
