@@ -22,7 +22,3 @@ minetest.register_on_mods_loaded(function()
 
 	minetest.register_entity(":__builtin:item", itemdef)
 end)
-
-minetest.override_item("air", {
-    light_source = 5,
-})
