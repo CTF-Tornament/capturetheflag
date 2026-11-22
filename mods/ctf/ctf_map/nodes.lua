@@ -136,6 +136,7 @@ minetest.register_node("ctf_map:killnode", {
 
 
 minetest.register_node("ctf_map:wheat_block", {
+	groups = {fall_damage_add_percent = -35, crumbly = 3, soil = 1, grass = 1, snappy = 2, bouncy = 5,},
 	description = "Wheat Block",
 	tiles = {"ctf_map_wheat_block_tb.png", "ctf_map_wheat_block_tb.png", "ctf_map_wheat_block_side.png"},
 	paramtype = "light",
@@ -144,7 +145,6 @@ minetest.register_node("ctf_map:wheat_block", {
     diggable = true,
 	pointable = true,
 	is_ground_content = false,
-	groups = {fall_damage_add_percent = -35, crumbly = 3, soil = 1, grass = 1, snappy = 2, bouncy = 5,},
 	sounds = default.node_sound_dirt_defaults(),
 })
 
