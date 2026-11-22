@@ -7,7 +7,7 @@ local classes = {}
 
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local class_list = {"knight", "ranged", "support", --[["hunter"]]}
+local class_list = {"knight", "ranged", "support", "hunter"}
 local class_props = {
 	knight = {
 		name = "Knight",
@@ -61,20 +61,20 @@ local class_props = {
 			["ctf_melee:"] = "default_tool_steelsword.png^ctf_modebase_group.png",
 		},
 	},
-	-- hunter = {
-	-- 	name = "Hunter",
-	-- 	color = "red",
-	-- 	description = S("Melee/ranged class that hunts down a random enemy player.\n"..
-	-- 			"Both the hunter and their target can see each other's positions, with a few seconds delay. "..
-	-- 			"The hunter's damage is buffed against their target, and nerfed against everyone else. "..
-	-- 			"They heal upon killing their target"),
-	-- 	items = {
-	-- 		"ctf_melee:sword_steel",
-	-- 		"ctf_ranged:pistol_loaded",
-	-- 		"ctf_mode_classes:hunter_token",
-	-- 	},
-	-- 	disallowed_items = {}
-	-- }
+	hunter = {
+		name = "Hunter",
+		color = "red",
+		description = S("Melee/ranged class that hunts down a random enemy player.\n"..
+				"Both the hunter and their target can see each other's positions, with a few seconds delay. "..
+				"The hunter's damage is buffed against their target, and nerfed against everyone else. "..
+				"They heal upon killing their target"),
+		items = {
+			"ctf_melee:sword_steel",
+			"ctf_ranged:pistol_loaded",
+			"ctf_mode_classes:hunter_token",
+		},
+		disallowed_items = {}
+	}
 }
 
 minetest.register_on_mods_loaded(function()
